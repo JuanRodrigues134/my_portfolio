@@ -1,0 +1,67 @@
+<mvc:View
+    controllerName="com.rrsolutions.myportfolio.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:m="sap.m"
+    xmlns="sap.uxap">
+    <ObjectPageLayout id="idObjPage">
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle>
+                <expandedHeading>
+                    <m:FlexBox
+                        fitContainer="true"
+                        alignItems="Center">
+                        <m:Avatar
+                            src="../img/AvatarJuan.png"
+                            class="sapUiTinyMarginEnd" />
+                        <m:Title
+                            text="Denise Smith"
+                            wrapping="true" />
+                    </m:FlexBox>
+                </expandedHeading>
+                <snappedHeading>
+                    <m:FlexBox
+                        fitContainer="true"
+                        alignItems="Center">
+                        <m:Avatar
+                            src="../img/AvatarJuan.png"
+                            class="sapUiTinyMarginEnd" />
+                        <m:Title
+                            text="Denise Smith"
+                            wrapping="true" />
+                    </m:FlexBox>
+                </snappedHeading>
+                <expandedContent>
+                    <m:Label text="Example of an ObjectPagt" />
+                </expandedContent>
+                <snappedTitleOnMobile>
+                    <m:Title text="Object Page Header" />
+                </snappedTitleOnMobile>
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>
+        <sections>
+            <ObjectPageSection title="{i18n>aboutMePageSection}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:HBox>
+                                <m:Text text="Teste" />
+                            </m:HBox>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="{i18n>experiencePageSection}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:HBox>
+                                <m:Text text="Teste" />
+                            </m:HBox>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+        </sections>
+    </ObjectPageLayout>
+</mvc:View>
