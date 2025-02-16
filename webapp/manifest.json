@@ -57,6 +57,10 @@
         "settings": {
           "bundleName": "com.rrsolutions.myportfolio.i18n.i18n"
         }
+      },
+      "user": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/user.json"
       }
     },
     "resources": {
@@ -80,9 +84,7 @@
         {
           "name": "RouteHome",
           "pattern": ":?query:",
-          "target": [
-            "TargetHome"
-          ]
+          "target": ["TargetHome"]
         }
       ],
       "targets": {

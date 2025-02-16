@@ -1,0 +1,38 @@
+{
+  "name": "Juan Rabelo",
+  "role": "SAPUI5/Fiori Developer",
+  "aboutMe": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+  "projects": [{}],
+  "skillsRating": [
+    {
+      "id": 1,
+      "name": "SAPUI5",
+      "rating": "4"
+    },
+    {
+      "id": 2,
+      "name": "Fiori Elements",
+      "rating": "3"
+    },
+    {
+      "id": 4,
+      "name": "SAP BTP",
+      "rating": "3"
+    },
+    {
+      "id": 5,
+      "name": "Abap",
+      "rating": "3"
+    },
+    {
+      "id": 6,
+      "name": "oData",
+      "rating": "3"
+    },
+    {
+      "id": 7,
+      "name": "GitLab",
+      "rating": "3"
+    }
+  ]
+}

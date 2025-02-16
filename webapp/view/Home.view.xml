@@ -14,11 +14,18 @@
                         <m:Avatar
                             src="../img/AvatarJuan.png"
                             class="sapUiTinyMarginEnd" />
-                        <m:Title
-                            text="Denise Smith"
-                            wrapping="true" />
+                        <m:VBox>
+                            <m:Title
+                                text="{user>/name}"
+                                wrapping="true" />
+                            <m:Text text="{user>/role}" />
+                        </m:VBox>
                     </m:FlexBox>
                 </expandedHeading>
+                <expandedContent>
+                </expandedContent>
+                <snappedContent>
+                </snappedContent>
                 <snappedHeading>
                     <m:FlexBox
                         fitContainer="true"
@@ -26,17 +33,14 @@
                         <m:Avatar
                             src="../img/AvatarJuan.png"
                             class="sapUiTinyMarginEnd" />
-                        <m:Title
-                            text="Denise Smith"
-                            wrapping="true" />
+                        <m:VBox>
+                            <m:Title
+                                text="{user>/name}"
+                                wrapping="true" />
+                            <m:Text text="{user>/role}" />
+                        </m:VBox>
                     </m:FlexBox>
                 </snappedHeading>
-                <expandedContent>
-                    <m:Label text="Example of an ObjectPagt" />
-                </expandedContent>
-                <snappedTitleOnMobile>
-                    <m:Title text="Object Page Header" />
-                </snappedTitleOnMobile>
             </ObjectPageDynamicHeaderTitle>
         </headerTitle>
         <sections>
@@ -52,6 +56,28 @@
                 </subSections>
             </ObjectPageSection>
             <ObjectPageSection title="{i18n>experiencePageSection}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:HBox>
+                                <m:Text text="Teste" />
+                            </m:HBox>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="{i18n>projectsPageSection}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:HBox>
+                                <m:Text text="Teste" />
+                            </m:HBox>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="{i18n>ratingSkillsPageSection}">
                 <subSections>
                     <ObjectPageSubSection titleUppercase="false">
                         <blocks>
