@@ -7,50 +7,59 @@
     <ObjectPageLayout id="idObjPage">
         <headerTitle>
             <ObjectPageDynamicHeaderTitle>
-                <expandedHeading>
-                    <m:FlexBox
-                        fitContainer="true"
-                        alignItems="Center">
-                        <m:Avatar
-                            src="../img/AvatarJuan.png"
-                            class="sapUiTinyMarginEnd" />
-                        <m:VBox>
-                            <m:Title
-                                text="{user>/name}"
-                                wrapping="true" />
-                            <m:Text text="{user>/role}" />
-                        </m:VBox>
-                    </m:FlexBox>
-                </expandedHeading>
                 <expandedContent>
                 </expandedContent>
                 <snappedContent>
                 </snappedContent>
                 <snappedHeading>
-                    <m:FlexBox
-                        fitContainer="true"
-                        alignItems="Center">
-                        <m:Avatar
-                            src="../img/AvatarJuan.png"
-                            class="sapUiTinyMarginEnd" />
-                        <m:VBox>
-                            <m:Title
-                                text="{user>/name}"
-                                wrapping="true" />
-                            <m:Text text="{user>/role}" />
-                        </m:VBox>
-                    </m:FlexBox>
                 </snappedHeading>
             </ObjectPageDynamicHeaderTitle>
         </headerTitle>
+        <headerContent>
+            <m:HBox
+                fitContainer="true"
+                alignItems="Center"
+                alignContent="SpaceBetween"
+                justifyContent="SpaceBetween"
+                width="100%">
+                <m:HBox>
+                    <m:Avatar
+                        src="../img/AvatarJuan.png"
+                        class="sapUiTinyMarginEnd" />
+                    <m:VBox>
+                        <m:Title
+                            text="{user>/name}"
+                            wrapping="true" />
+                        <m:Text text="{user>/role}" />
+                    </m:VBox>
+                </m:HBox>
+                <m:HBox>
+                    <m:Toolbar design="Transparent">
+                        <m:Link text="{i18n>downloadCv}" />
+                        <m:ToolbarSeparator />
+                        <m:Link
+                            text="{i18n>linkedinLink}"
+                            href="{user>/linkedin}"
+                            target="blank" />
+                        <m:ToolbarSeparator />
+                        <m:Link
+                            text="{i18n>gitHubLink}"
+                            href="{user>/gitHub}"
+                            target="blank" />
+                        <m:ToolbarSeparator />
+                        <m:Link text="{user>/email}" />
+                    </m:Toolbar>
+                </m:HBox>
+            </m:HBox>
+        </headerContent>
         <sections>
             <ObjectPageSection title="{i18n>aboutMePageSection}">
                 <subSections>
                     <ObjectPageSubSection titleUppercase="false">
                         <blocks>
-                            <m:HBox>
-                                <m:Text text="Teste" />
-                            </m:HBox>
+                            <m:Text
+                                text="{user>/aboutMe}"
+                                width="100%" />
                         </blocks>
                     </ObjectPageSubSection>
                 </subSections>

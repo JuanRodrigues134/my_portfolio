@@ -1,8 +1,11 @@
 {
   "name": "Juan Rabelo",
   "role": "SAPUI5/Fiori Developer",
-  "aboutMe": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+  "email": "juan.rabelo05@gmail.com",
+  "aboutMe": "Passionate and results-driven developer with expertise in SAPUI5/Fiori, SAP BTP, and SAP Customer Portal, \nas well as strong skills in JavaScript, HTML, CSS, Node.js, and TypeScript.\n\nI specialize in creating intuitive, high-performance applications with a focus on delivering user-friendly experiences. \nMy ability to solve complex problems, combined with a solid technical foundation, allows me to develop innovative solutions that align with business goals.\n\nWith proficiency in English and a collaborative mindset, I work seamlessly with global teams, \nensuring efficient communication and successful project delivery.\n\nI’m always eager to learn and explore new technologies, committed to producing high-quality work, and excited to tackle new challenges.\n\nLet’s connect and discuss how I can contribute to your next project!",
   "projects": [{}],
+  "linkedin": "https://www.linkedin.com/in/juan-rabelo-570461244/",
+  "gitHub": "https://github.com/JuanRodrigues134",
   "skillsRating": [
     {
       "id": 1,
