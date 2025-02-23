@@ -66,11 +66,29 @@
             </ObjectPageSection>
             <ObjectPageSection title="{i18n>experiencePageSection}">
                 <subSections>
-                    <ObjectPageSubSection titleUppercase="false">
+                    <ObjectPageSubSection
+                        id="objPageSubExperience"
+                        titleUppercase="false">
                         <blocks>
-                            <m:HBox>
-                                <m:Text text="Teste" />
-                            </m:HBox>
+                            <m:List items="{user>/experiences}">
+                                <m:CustomListItem>
+                                    <m:VBox class="sapUiSmallMargin">
+                                        <m:Title text="{user>companyName} - {user>date}" />
+                                        <m:Text text="{i18n>competences}:" />
+                                        <m:List>
+                                            <m:items>
+                                                <m:StandardListItem title="{user>competences}" />
+                                            </m:items>
+                                        </m:List>
+                                        <m:Text text="{i18n>extras}:" />
+                                        <m:List>
+                                            <m:items>
+                                                <m:StandardListItem title="{user>extras}" />
+                                            </m:items>
+                                        </m:List>
+                                    </m:VBox>
+                                </m:CustomListItem>
+                            </m:List>
                         </blocks>
                     </ObjectPageSubSection>
                 </subSections>
@@ -79,9 +97,41 @@
                 <subSections>
                     <ObjectPageSubSection titleUppercase="false">
                         <blocks>
-                            <m:HBox>
-                                <m:Text text="Teste" />
-                            </m:HBox>
+                            <m:List items="{user>/projects}">
+                                <m:CustomListItem>
+                                    <m:Panel
+                                        headerText="{user>title}"
+                                        expandable="true"
+                                        expanded="false">
+                                        <m:VBox>
+                                            <m:Text
+                                                text="🔹 Situação:"
+                                                class="sapUiSmallMarginTop" />
+                                            <m:Text
+                                                text="{user>situation}"
+                                                wrapping="true" />
+                                            <m:Text
+                                                text="📌 Tarefa:"
+                                                class="sapUiSmallMarginTop" />
+                                            <m:Text
+                                                text="{user>task}"
+                                                wrapping="true" />
+                                            <m:Text
+                                                text="⚙️ Ação:"
+                                                class="sapUiSmallMarginTop" />
+                                            <m:Text
+                                                text="{user>action}"
+                                                wrapping="true" />
+                                            <m:Text
+                                                text="✅ Resultado:"
+                                                class="sapUiSmallMarginTop" />
+                                            <m:Text
+                                                text="{user>result}"
+                                                wrapping="true" />
+                                        </m:VBox>
+                                    </m:Panel>
+                                </m:CustomListItem>
+                            </m:List>
                         </blocks>
                     </ObjectPageSubSection>
                 </subSections>
