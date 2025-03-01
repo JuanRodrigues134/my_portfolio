@@ -5,26 +5,50 @@ sap.ui.define(
     "sap/uxap/BlockBase",
     "sap/m/Text",
     "sap/ui/core/CustomData",
+    "sap/ui/core/Fragment",
   ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (Controller, GroupHeaderListItem, BlockBase, Text, CustomData) {
+  function (Controller,
+    GroupHeaderListItem,
+    BlockBase,
+    Text,
+    CustomData,
+    Fragment) {
     "use strict";
 
     return Controller.extend("com.rrsolutions.myportfolio.controller.Home", {
-      onInit: function () {},
+      onInit: function () { },
 
       /**
        * @override
        */
-      onAfterRendering() {},
+      onAfterRendering() { },
 
-      getGroupHeader: function (oGroup) {
-        return new GroupHeaderListItem({
-          title: oGroup.key,
+      onCvLinkPress: async function () {
+        const oView = this.getView();
+        const oLink = this.byId("idCvLink");
+        this._oFragment ??= await Fragment.load({
+          id: oView.getId(),
+          name: "com.rrsolutions.myportfolio.view.fragments.SelectLanguagePopover",
+          controller: this
         });
+        oView.addContent(this._oFragment);
+        this._oFragment.openBy(oLink)
       },
+
+      onDownloadCv: function (sLanguage) {
+        const sFileName = `JUAN RABELO ${sLanguage}.pdf`;
+        const sFilePath = jQuery.sap.getModulePath("com.rrsolutions.myportfolio", "/assets/" + sFileName);
+        const oLink = document.createElement("a");
+        
+        oLink.href = sFilePath;
+        oLink.download = sFileName;
+        document.body.appendChild(oLink);
+        oLink.click();
+        document.body.removeChild(oLink);
+      }
     });
   }
 );

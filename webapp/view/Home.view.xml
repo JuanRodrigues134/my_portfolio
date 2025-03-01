@@ -3,7 +3,9 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns:m="sap.m"
-    xmlns="sap.uxap">
+    xmlns="sap.uxap"
+    xmlns:form="sap.ui.layout.form"
+>
     <ObjectPageLayout id="idObjPage">
         <headerTitle>
             <ObjectPageDynamicHeaderTitle>
@@ -21,31 +23,36 @@
                 alignItems="Center"
                 alignContent="SpaceBetween"
                 justifyContent="SpaceBetween"
-                width="100%">
+                width="100%"
+            >
                 <m:HBox>
                     <m:Avatar
                         src="../img/AvatarJuan.png"
-                        class="sapUiTinyMarginEnd" />
+                        class="sapUiTinyMarginEnd"
+                    />
                     <m:VBox>
                         <m:Title
                             text="{user>/name}"
-                            wrapping="true" />
+                            wrapping="true"
+                        />
                         <m:Text text="{user>/role}" />
                     </m:VBox>
                 </m:HBox>
                 <m:HBox>
                     <m:Toolbar design="Transparent">
-                        <m:Link text="{i18n>downloadCv}" />
+                        <m:Link id="idCvLink" text="{i18n>downloadCv}" press="onCvLinkPress"/>
                         <m:ToolbarSeparator />
                         <m:Link
                             text="{i18n>linkedinLink}"
                             href="{user>/linkedin}"
-                            target="blank" />
+                            target="blank"
+                        />
                         <m:ToolbarSeparator />
                         <m:Link
                             text="{i18n>gitHubLink}"
                             href="{user>/gitHub}"
-                            target="blank" />
+                            target="blank"
+                        />
                         <m:ToolbarSeparator />
                         <m:Link text="{user>/email}" />
                     </m:Toolbar>
@@ -58,8 +65,9 @@
                     <ObjectPageSubSection titleUppercase="false">
                         <blocks>
                             <m:Text
-                                text="{user>/aboutMe}"
-                                width="100%" />
+                                text="{user>/aboutMePT}"
+                                width="100%"
+                            />
                         </blocks>
                     </ObjectPageSubSection>
                 </subSections>
@@ -68,7 +76,8 @@
                 <subSections>
                     <ObjectPageSubSection
                         id="objPageSubExperience"
-                        titleUppercase="false">
+                        titleUppercase="false"
+                    >
                         <blocks>
                             <m:List items="{user>/experiences}">
                                 <m:CustomListItem>
@@ -102,32 +111,41 @@
                                     <m:Panel
                                         headerText="{user>title}"
                                         expandable="true"
-                                        expanded="false">
+                                        expanded="false"
+                                    >
                                         <m:VBox>
                                             <m:Text
                                                 text="🔹 Situação:"
-                                                class="sapUiSmallMarginTop" />
+                                                class="sapUiSmallMarginTop"
+                                            />
                                             <m:Text
                                                 text="{user>situation}"
-                                                wrapping="true" />
+                                                wrapping="true"
+                                            />
                                             <m:Text
                                                 text="📌 Tarefa:"
-                                                class="sapUiSmallMarginTop" />
+                                                class="sapUiSmallMarginTop"
+                                            />
                                             <m:Text
                                                 text="{user>task}"
-                                                wrapping="true" />
+                                                wrapping="true"
+                                            />
                                             <m:Text
                                                 text="⚙️ Ação:"
-                                                class="sapUiSmallMarginTop" />
+                                                class="sapUiSmallMarginTop"
+                                            />
                                             <m:Text
                                                 text="{user>action}"
-                                                wrapping="true" />
+                                                wrapping="true"
+                                            />
                                             <m:Text
                                                 text="✅ Resultado:"
-                                                class="sapUiSmallMarginTop" />
+                                                class="sapUiSmallMarginTop"
+                                            />
                                             <m:Text
                                                 text="{user>result}"
-                                                wrapping="true" />
+                                                wrapping="true"
+                                            />
                                         </m:VBox>
                                     </m:Panel>
                                 </m:CustomListItem>
@@ -140,9 +158,21 @@
                 <subSections>
                     <ObjectPageSubSection titleUppercase="false">
                         <blocks>
-                            <m:HBox>
-                                <m:Text text="Teste" />
-                            </m:HBox>
+                            <m:FlexBox
+                                items="{user>/skillsRating}"
+                                wrap="Wrap"
+                            >
+                                <form:SimpleForm id="idSimpleForm">
+                                    <form:content>
+                                        <m:Label text="{user>name}" />
+                                        <m:RatingIndicator
+                                            id="idRateRatingIndicator"
+                                            value="{user>rating}"
+                                            editable="false"
+                                        />
+                                    </form:content>
+                                </form:SimpleForm>
+                            </m:FlexBox>
                         </blocks>
                     </ObjectPageSubSection>
                 </subSections>
