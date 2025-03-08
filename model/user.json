@@ -112,7 +112,9 @@
     {
       "id": "taskMgmt",
       "name": "Task Management",
-      "url": "https://juanrodrigues134.github.io/ztask_mgmt/"
+      "url": "https://juanrodrigues134.github.io/ztask_mgmt/",
+      "description": "Manage your tasks locally",
+      "icon": "sap-icon://activities"
     }
   ]
 }

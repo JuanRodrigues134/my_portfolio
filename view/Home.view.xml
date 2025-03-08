@@ -171,9 +171,10 @@
                                         <m:GenericTile
                                             header="{user>name}"
                                             url="{user>url}"
-                                            press="onMyAppGenericTilePress">
+                                            press="onMyAppGenericTilePress"
+                                            subheader="{user>description}">
                                             <m:TileContent>
-                                                <m:Text text="Description" />
+                                                <m:ImageContent src="{user>icon}" />
                                             </m:TileContent>
                                         </m:GenericTile>
                                     </m:HBox>
