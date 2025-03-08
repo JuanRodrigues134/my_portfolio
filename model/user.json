@@ -1,0 +1,118 @@
+{
+  "name": "Juan Rabelo",
+  "role": "SAPUI5/Fiori Developer",
+  "email": "juan.rabelo05@gmail.com",
+  "aboutMeEN": "Passionate and results-driven developer with expertise in SAPUI5/Fiori, SAP BTP, and SAP Customer Portal, \nas well as strong skills in JavaScript, HTML, CSS, Node.js, and TypeScript.\n\nI specialize in creating intuitive, high-performance applications with a focus on delivering user-friendly experiences. \nMy ability to solve complex problems, combined with a solid technical foundation, allows me to develop innovative solutions that align with business goals.\n\nWith proficiency in English and a collaborative mindset, I work seamlessly with global teams, \nensuring efficient communication and successful project delivery.\n\nI’m always eager to learn and explore new technologies, committed to producing high-quality work, and excited to tackle new challenges.\n\nLet’s connect and discuss how I can contribute to your next project!",
+  "aboutMePT": "Desenvolvedor apaixonado e orientado a resultados, com expertise em SAPUI5/Fiori, SAP BTP e SAP Customer Portal, \nalém de forte conhecimento em JavaScript, HTML, CSS, Node.js e TypeScript.\n\nEspecializo-me na criação de aplicações intuitivas e de alto desempenho, sempre focando em proporcionar a melhor experiência para o usuário. \nMinha habilidade em resolver problemas complexos, aliada a uma base técnica sólida, me permite desenvolver soluções inovadoras alinhadas aos objetivos de negócios.\n\nCom fluência em inglês e um perfil colaborativo, trabalho de forma integrada com equipes globais, \ngarantindo uma comunicação eficiente e a entrega bem-sucedida de projetos.\n\nEstou sempre em busca de aprendizado e novas tecnologias, comprometido em produzir trabalho de alta qualidade e pronto para enfrentar novos desafios.\n\nVamos nos conectar e discutir como posso contribuir para o seu próximo projeto!",
+  "linkedin": "https://www.linkedin.com/in/juan-rabelo-570461244/",
+  "gitHub": "https://github.com/JuanRodrigues134",
+  "experiences": [
+    {
+      "companyName": "Axians - Portugal",
+      "date": "08/2023 - Actual",
+      "competences": [
+        "SAP BTP",
+        "SAP Fiori (Freestyle and Elements)",
+        "SAP ODP",
+        "SAP Customer Portal",
+        "VSCode",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "extras": ["GitLab", "Checkmarx", "Sonarqube"]
+    },
+    {
+      "companyName": "BRFactory",
+      "date": "06/2021 - 07/2023",
+      "competences": [
+        "SAP BTP",
+        "SAP BAS",
+        "SAP Fiori (Freestyle and Elements)",
+        "SAP oData",
+        "ABAP",
+        "VSCode",
+        "JavaScript",
+        "TypeScript",
+        "Flutter",
+        "React JS",
+        "Cordova"
+      ],
+      "extras": ["GitLab", "GiHub", "Azure", "C#", "Angular"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Equipment Cockpit - Axians",
+      "date": "2024",
+      "situation": "A empresa precisava de um ferramenta para que os técnicos gerissem os equipamentos do local.",
+      "task": "Desenvolver uma solução web para gerir esses equipamentos, tendo ações como, reversão, validação e alteração de campos específicos",
+      "action": "Implementei um app SAPUI5 freestyle conectado com o backend oData da empresa.",
+      "result": "Redução no tempo de gerenciamento dos equipamentos"
+    },
+    {
+      "title": "PEC Report generation - Axians",
+      "date": "2023",
+      "situation": "Os funcionários precisavam de gerar um relatório com as informações dos Sites, como, equipamentos, sites, locais, anomalias e contratos",
+      "task": "Criar uma solução web que iria gerar um documentos Word no front end para gerar 5 tipos diferentes de relatórios",
+      "action": "Criei um app SAPUI5 freestyle, utilizando a biblioteca docx.js para poder gerar esses relatórios, buscando as informações do serviço oData",
+      "result": "Facilidade na geração e agrupamento das informações sobre os sites"
+    },
+    {
+      "title": "Registro de Ponto Offline - BRFactory",
+      "date": "2022 - 2023",
+      "situation": "A gerência de campo precisava de um aplicativo mobile para poder registrar os pontos dos funcionários que iam para áreas como florestas.",
+      "task": "Criar um aplicativo mobile que pudesse registrar os pontos (Leitura NFC) e depois sincronizar com o sistema SAP",
+      "action": "Desenvolvi um aplicativo utilizando o framework Cordova e o SAPUI5 para poder criar todas as funcionalidades, juntamente desenvolvi o serviço oData para todas as informações necessárias, como recuperar os dados dos colaboradores e sincronizar os pontos.",
+      "result": "Colaboradores que iam para áreas longe do relógio de pontom poderiam bater os pontos através de um tablet que ficaria com um supervisor da área"
+    }
+  ],
+  "skillsRating": [
+    {
+      "id": 1,
+      "name": "SAPUI5",
+      "rating": "4"
+    },
+    {
+      "id": 2,
+      "name": "Fiori Elements",
+      "rating": "4"
+    },
+    {
+      "id": 4,
+      "name": "SAP BTP",
+      "rating": "3"
+    },
+    {
+      "id": 5,
+      "name": "Abap",
+      "rating": "3"
+    },
+    {
+      "id": 6,
+      "name": "oData",
+      "rating": "3"
+    },
+    {
+      "id": 7,
+      "name": "GitLab",
+      "rating": "3"
+    },
+    {
+      "id": 8,
+      "name": "JavaScript",
+      "rating": "4"
+    },
+    {
+      "id": 9,
+      "name": "TypeScript",
+      "rating": "3"
+    }
+  ],
+  "personalProjects": [
+    {
+      "id": "taskMgmt",
+      "name": "Task Management",
+      "url": "https://juanrodrigues134.github.io/ztask_mgmt/"
+    }
+  ]
+}
