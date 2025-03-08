@@ -1,0 +1,188 @@
+<mvc:View
+    controllerName="com.rrsolutions.myportfolio.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:m="sap.m"
+    xmlns="sap.uxap"
+    xmlns:form="sap.ui.layout.form">
+    <ObjectPageLayout id="idObjPage">
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle>
+                <expandedContent>
+                </expandedContent>
+                <snappedContent>
+                </snappedContent>
+                <snappedHeading>
+                </snappedHeading>
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>
+        <headerContent>
+            <m:HBox
+                fitContainer="true"
+                alignItems="Center"
+                alignContent="SpaceBetween"
+                justifyContent="SpaceBetween"
+                width="100%">
+                <m:HBox>
+                    <m:Avatar
+                        src="img/AvatarJuan.png"
+                        class="sapUiTinyMarginEnd" />
+                    <m:VBox>
+                        <m:Title
+                            text="{user>/name}"
+                            wrapping="true" />
+                        <m:Text text="{user>/role}" />
+                    </m:VBox>
+                </m:HBox>
+                <m:HBox>
+                    <m:Toolbar design="Transparent">
+                        <m:Link
+                            id="idCvLink"
+                            text="{i18n>downloadCv}"
+                            press="onCvLinkPress" />
+                        <m:ToolbarSeparator />
+                        <m:Link
+                            text="{i18n>linkedinLink}"
+                            href="{user>/linkedin}"
+                            target="blank" />
+                        <m:ToolbarSeparator />
+                        <m:Link
+                            text="{i18n>gitHubLink}"
+                            href="{user>/gitHub}"
+                            target="blank" />
+                        <m:ToolbarSeparator />
+                        <m:Link text="{user>/email}" />
+                    </m:Toolbar>
+                </m:HBox>
+            </m:HBox>
+        </headerContent>
+        <sections>
+            <ObjectPageSection title="{i18n>aboutMePageSection}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:Text
+                                text="{user>/aboutMePT}"
+                                width="100%" />
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="{i18n>experiencePageSection}">
+                <subSections>
+                    <ObjectPageSubSection
+                        id="objPageSubExperience"
+                        titleUppercase="false">
+                        <blocks>
+                            <m:List items="{user>/experiences}">
+                                <m:CustomListItem>
+                                    <m:VBox class="sapUiSmallMargin">
+                                        <m:Title text="{user>companyName} - {user>date}" />
+                                        <m:Text text="{i18n>competences}:" />
+                                        <m:List>
+                                            <m:items>
+                                                <m:StandardListItem title="{user>competences}" />
+                                            </m:items>
+                                        </m:List>
+                                        <m:Text text="{i18n>extras}:" />
+                                        <m:List>
+                                            <m:items>
+                                                <m:StandardListItem title="{user>extras}" />
+                                            </m:items>
+                                        </m:List>
+                                    </m:VBox>
+                                </m:CustomListItem>
+                            </m:List>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="{i18n>projectsPageSection}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:List items="{user>/projects}">
+                                <m:CustomListItem>
+                                    <m:Panel
+                                        headerText="{user>title}"
+                                        expandable="true"
+                                        expanded="false">
+                                        <m:VBox>
+                                            <m:Text
+                                                text="🔹 Situação:"
+                                                class="sapUiSmallMarginTop" />
+                                            <m:Text
+                                                text="{user>situation}"
+                                                wrapping="true" />
+                                            <m:Text
+                                                text="📌 Tarefa:"
+                                                class="sapUiSmallMarginTop" />
+                                            <m:Text
+                                                text="{user>task}"
+                                                wrapping="true" />
+                                            <m:Text
+                                                text="⚙️ Ação:"
+                                                class="sapUiSmallMarginTop" />
+                                            <m:Text
+                                                text="{user>action}"
+                                                wrapping="true" />
+                                            <m:Text
+                                                text="✅ Resultado:"
+                                                class="sapUiSmallMarginTop" />
+                                            <m:Text
+                                                text="{user>result}"
+                                                wrapping="true" />
+                                        </m:VBox>
+                                    </m:Panel>
+                                </m:CustomListItem>
+                            </m:List>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="{i18n>ratingSkillsPageSection}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:FlexBox
+                                items="{user>/skillsRating}"
+                                wrap="Wrap">
+                                <form:SimpleForm id="idSimpleForm">
+                                    <form:content>
+                                        <m:Label text="{user>name}" />
+                                        <m:RatingIndicator
+                                            id="idRateRatingIndicator"
+                                            value="{user>rating}"
+                                            editable="false" />
+                                    </form:content>
+                                </form:SimpleForm>
+                            </m:FlexBox>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection title="{i18n>personalProjectsSubSection}">
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <m:List items="{user>/personalProjects}">
+                                <m:CustomListItem>
+                                    <m:HBox>
+                                        <m:GenericTile
+                                            header="{user>name}"
+                                            url="{user>url}"
+                                            press="onMyAppGenericTilePress">
+                                            <m:TileContent>
+                                                <m:Text text="Description" />
+                                            </m:TileContent>
+                                        </m:GenericTile>
+                                    </m:HBox>
+                                </m:CustomListItem>
+                            </m:List>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+        </sections>
+    </ObjectPageLayout>
+</mvc:View>
