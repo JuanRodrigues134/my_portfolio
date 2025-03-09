@@ -11,7 +11,8 @@
                 text="{i18n>portuguese}"
                 press="onDownloadCv('PT')" />
             <Button
-                text="btnEnlanguage"
+                id="btnEnLanguage"
+                text="{i18n>english}"
                 press="onDownloadCv('EN')" />
         </VBox>
     </Popover>
