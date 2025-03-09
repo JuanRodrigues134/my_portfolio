@@ -8,6 +8,7 @@ sap.ui.define(
     "sap/ui/core/Fragment",
     "sap/m/library",
     "com/rrsolutions/myportfolio/model/models",
+    "sap/ui/model/json/JSONModel",
   ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
@@ -19,15 +20,21 @@ sap.ui.define(
     Text,
     CustomData,
     Fragment,
-    mobileLibrary,
-    models
+    library,
+    models,
+    JSONModel
   ) {
     "use strict";
 
-    const URLHelper = mobileLibrary.URLHelper;
+    const URLHelper = library.URLHelper;
 
     return Controller.extend("com.rrsolutions.myportfolio.controller.Home", {
-      onInit: function () {},
+      onInit: function () {
+        const oViewModel = new JSONModel({
+          isDarkMode: false,
+        });
+        this.getView().setModel(oViewModel, "viewModel");
+      },
 
       /**
        * @override
@@ -83,6 +90,12 @@ sap.ui.define(
         sap.ui.getCore().setLanguage(sSelectedLanguage);
         models.loadUserModel();
         this.getView().getModel("user").refresh();
+      },
+      onPressChangeTheme: function (sTheme) {
+        const oViewModel = this.getView().getModel("viewModel");
+        const isDarkMode = oViewModel.getProperty("/isDarkMode");
+        oViewModel.setProperty("/isDarkMode", !isDarkMode);
+        sap.ui.getCore().getConfiguration().setTheme(sTheme);
       },
     });
   }

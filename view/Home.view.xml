@@ -19,6 +19,16 @@
                         icon="sap-icon://world"
                         tooltip="{i18n>tooltipLanguage}"
                         press="onPressChangeLanguage" /> -->
+                    <m:Button
+                        icon="sap-icon://dark-mode"
+                        visible="{viewModel>/isDarkMode}"
+                        press="onPressChangeTheme('sap_horizon')"
+                        tooltip="{i18n>lightMode}" />
+                    <m:Button
+                        icon="sap-icon://light-mode"
+                        visible="{= !${viewModel>/isDarkMode}}"
+                        press="onPressChangeTheme('sap_horizon_dark')"
+                        tooltip="{i18n>darkMode}" />
                 </actions>
             </ObjectPageDynamicHeaderTitle>
         </headerTitle>
@@ -40,8 +50,8 @@
                         <m:Text text="{user>/role}" />
                     </m:VBox>
                 </m:HBox>
-                <m:HBox>
-                    <m:Toolbar design="Transparent">
+                <m:HBox wrap="Wrap">
+                    <m:OverflowToolbar design="Transparent">
                         <m:Link
                             id="idCvLink"
                             text="{i18n>downloadCv}"
@@ -58,7 +68,7 @@
                             target="blank" />
                         <m:ToolbarSeparator />
                         <m:Link text="{user>/email}" />
-                    </m:Toolbar>
+                    </m:OverflowToolbar>
                 </m:HBox>
             </m:HBox>
         </headerContent>
