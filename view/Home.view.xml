@@ -14,6 +14,12 @@
                 </snappedContent>
                 <snappedHeading>
                 </snappedHeading>
+                <actions>
+                    <!-- <m:Button
+                        icon="sap-icon://world"
+                        tooltip="{i18n>tooltipLanguage}"
+                        press="onPressChangeLanguage" /> -->
+                </actions>
             </ObjectPageDynamicHeaderTitle>
         </headerTitle>
         <headerContent>
@@ -62,7 +68,7 @@
                     <ObjectPageSubSection titleUppercase="false">
                         <blocks>
                             <m:Text
-                                text="{user>/aboutMePT}"
+                                text="{user>/aboutMe}"
                                 width="100%" />
                         </blocks>
                     </ObjectPageSubSection>

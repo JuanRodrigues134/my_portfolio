@@ -58,9 +58,9 @@
           "bundleName": "com.rrsolutions.myportfolio.i18n.i18n"
         }
       },
-      "user": {
+      "languages": {
         "type": "sap.ui.model.json.JSONModel",
-        "uri": "model/user.json"
+        "uri": "model/languages.json"
       }
     },
     "resources": {

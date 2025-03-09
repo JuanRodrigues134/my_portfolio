@@ -1,0 +1,32 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core">
+    <Dialog title="{i18n>switchLanguage}">
+        <content>
+            <HBox
+                fitContainer="true"
+                justifyContent="Center">
+                <Select
+                    id="idSlctLanguage"
+                    items="{languages>/languages}"
+                    forceSelection="false">
+                    <items>
+                        <c:Item
+                            key="{languages>code}"
+                            text="{languages>code}" />
+                    </items>
+                </Select>
+            </HBox>
+        </content>
+        <endButton>
+            <Button
+                text="{i18n>cancel}"
+                press="onPressCloseLanguage" />
+        </endButton>
+        <beginButton>
+            <Button
+                text="{i18n>confirm}"
+                press="onPressSelectLanguage" />
+        </beginButton>
+    </Dialog>
+</c:FragmentDefinition>

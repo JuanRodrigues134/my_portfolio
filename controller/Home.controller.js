@@ -6,29 +6,33 @@ sap.ui.define(
     "sap/m/Text",
     "sap/ui/core/CustomData",
     "sap/ui/core/Fragment",
-    "sap/m/library"
+    "sap/m/library",
+    "com/rrsolutions/myportfolio/model/models",
   ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (Controller,
+  function (
+    Controller,
     GroupHeaderListItem,
     BlockBase,
     Text,
     CustomData,
     Fragment,
-    mobileLibrary) {
+    mobileLibrary,
+    models
+  ) {
     "use strict";
 
     const URLHelper = mobileLibrary.URLHelper;
 
     return Controller.extend("com.rrsolutions.myportfolio.controller.Home", {
-      onInit: function () { },
+      onInit: function () {},
 
       /**
        * @override
        */
-      onAfterRendering() { },
+      onAfterRendering() {},
 
       onCvLinkPress: async function () {
         const oView = this.getView();
@@ -36,15 +40,18 @@ sap.ui.define(
         this._oFragment ??= await Fragment.load({
           id: oView.getId(),
           name: "com.rrsolutions.myportfolio.view.fragments.SelectLanguagePopover",
-          controller: this
+          controller: this,
         });
         oView.addContent(this._oFragment);
-        this._oFragment.openBy(oLink)
+        this._oFragment.openBy(oLink);
       },
 
       onDownloadCv: function (sLanguage) {
         const sFileName = `JUAN RABELO ${sLanguage}.pdf`;
-        const sFilePath = jQuery.sap.getModulePath("com.rrsolutions.myportfolio", "/assets/" + sFileName);
+        const sFilePath = jQuery.sap.getModulePath(
+          "com.rrsolutions.myportfolio",
+          "/assets/" + sFileName
+        );
         const oLink = document.createElement("a");
 
         oLink.href = sFilePath;
@@ -58,7 +65,25 @@ sap.ui.define(
         const oSource = oEvent.getSource();
         const { id, name, url } = oSource.getBindingContext("user").getObject();
         URLHelper.redirect(url, true);
-      }
+      },
+
+      onPressChangeLanguage: async function () {
+        const oView = this.getView();
+        this._oLanguageList ??= await Fragment.load({
+          id: oView.getId(),
+          name: "com.rrsolutions.myportfolio.view.fragments.SelectLanguageList",
+          controller: this,
+        });
+        oView.addContent(this._oLanguageList);
+        this._oLanguageList.open();
+      },
+
+      onPressSelectLanguage: function () {
+        const sSelectedLanguage = this.byId("idSlctLanguage");
+        sap.ui.getCore().setLanguage(sSelectedLanguage);
+        models.loadUserModel();
+        this.getView().getModel("user").refresh();
+      },
     });
   }
 );

@@ -1,10 +1,18 @@
 <c:FragmentDefinition
     xmlns="sap.m"
     xmlns:c="sap.ui.core">
-    <Popover id="idPopoverSelectLanguage" showHeader="false" placement="Bottom">
+    <Popover
+        id="idPopoverSelectLanguage"
+        showHeader="false"
+        placement="Bottom">
         <VBox>
-            <Button text="{i18n>portuguese}" press="onDownloadCv('PT')"/>
-            <Button text="{i18n>english}" press="onDownloadCv('EN')"/>
+            <Button
+                id="btnPtLanguage"
+                text="{i18n>portuguese}"
+                press="onDownloadCv('PT')" />
+            <Button
+                text="btnEnlanguage"
+                press="onDownloadCv('EN')" />
         </VBox>
     </Popover>
 </c:FragmentDefinition>
