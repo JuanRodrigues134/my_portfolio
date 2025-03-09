@@ -97,6 +97,16 @@ sap.ui.define(
         oViewModel.setProperty("/isDarkMode", !isDarkMode);
         sap.ui.getCore().getConfiguration().setTheme(sTheme);
       },
+      onPressOpenLinks: async function () {
+        const oView = this.getView();
+        this._oActionFragment ??= await Fragment.load({
+          id: oView.getId(),
+          name: "com.rrsolutions.myportfolio.view.fragments.Header.MobileLinks",
+          controller: this,
+        });
+        oView.addContent(this._oActionFragment);
+        this._oActionFragment.openBy(this.byId("idButtonLinks"));
+      },
     });
   }
 );

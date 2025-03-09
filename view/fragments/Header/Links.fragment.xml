@@ -1,0 +1,23 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core">
+    <HBox wrap="Wrap">
+        <Toolbar design="Transparent">
+            <Link
+                text="{i18n>downloadCv}"
+                press="onCvLinkPress" />
+            <ToolbarSeparator />
+            <Link
+                text="{i18n>linkedinLink}"
+                href="{user>/linkedin}"
+                target="blank" />
+            <ToolbarSeparator />
+            <Link
+                text="{i18n>gitHubLink}"
+                href="{user>/gitHub}"
+                target="blank" />
+            <ToolbarSeparator />
+            <Link text="{user>/email}" />
+        </Toolbar>
+    </HBox>
+</c:FragmentDefinition>

@@ -1,0 +1,16 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core">
+    <ActionSheet>
+        <Button
+            text="{i18n>downloadCv}"
+            press="onCvLinkPress" />
+        <Button
+            text="{i18n>linkedinLink}"
+            target="blank" />
+        <Button
+            text="{i18n>gitHubLink}"
+            target="blank" />
+        <Button text="{user>/email}" />
+    </ActionSheet>
+</c:FragmentDefinition>
