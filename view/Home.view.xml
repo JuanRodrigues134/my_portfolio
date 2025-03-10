@@ -16,10 +16,10 @@
                 <snappedHeading>
                 </snappedHeading>
                 <actions>
-                    <!-- <m:Button
+                    <m:Button
                         icon="sap-icon://world"
                         tooltip="{i18n>tooltipLanguage}"
-                        press="onPressChangeLanguage" /> -->
+                        press="onPressChangeLanguage" />
                     <m:Button
                         icon="sap-icon://light-mode"
                         visible="{viewModel>/isDarkMode}"

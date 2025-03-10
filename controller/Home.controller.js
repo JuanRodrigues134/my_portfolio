@@ -19,8 +19,10 @@ sap.ui.define(
       "com.rrsolutions.myportfolio.controller.Home",
       {
         onInit: function () {
+          const sLanguage = this.getLanguage();
           const oViewModel = new JSONModel({
             isDarkMode: false,
+            language: sLanguage,
           });
           this.setModel(oViewModel, "viewModel");
         },
@@ -73,10 +75,15 @@ sap.ui.define(
           this._oLanguageList.open();
         },
         onPressSelectLanguage: function () {
-          const sSelectedLanguage = this.byId("idSlctLanguage");
-          sap.ui.getCore().setLanguage(sSelectedLanguage);
+          const sSelectedLanguage =
+            this.byId("idSlctLanguage").getSelectedKey();
+          sap.ui.getCore().getConfiguration().setLanguage(sSelectedLanguage);
           models.loadUserModel();
           this.getModel("user").refresh();
+          this._oLanguageList.close();
+        },
+        onPressCloseLanguage: function () {
+          this._oLanguageList.close();
         },
         onPressChangeTheme: function (sTheme) {
           this._setTheme(sTheme);

@@ -9,7 +9,8 @@
                 <Select
                     id="idSlctLanguage"
                     items="{languages>/languages}"
-                    forceSelection="false">
+                    forceSelection="false"
+                    selectedKey="{viewModel>/language}">
                     <items>
                         <c:Item
                             key="{languages>code}"
@@ -20,7 +21,7 @@
         </content>
         <endButton>
             <Button
-                text="{i18n>cancel}"
+                text="{i18n>close}"
                 press="onPressCloseLanguage" />
         </endButton>
         <beginButton>

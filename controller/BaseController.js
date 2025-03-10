@@ -10,6 +10,14 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
       setModel: function (oModel, sName) {
         this.getView().setModel(oModel, sName);
       },
+      getLanguage: function () {
+        return sap.ui
+          .getCore()
+          .getConfiguration()
+          .getLanguage()
+          .split("-")[0]
+          .toUpperCase();
+      },
     }
   );
 });
