@@ -23,7 +23,7 @@ sap.ui.define(
         const sJsonPath = "model/user_" + sLanguage + ".json";
         const oUserModel = new JSONModel();
         oUserModel.loadData(sJsonPath).catch(function () {
-          oUserModel.loadData("model/user.json");
+          oUserModel.loadData("model/user/user.json");
         });
         return oUserModel;
       },
