@@ -111,25 +111,25 @@
                                         expanded="false">
                                         <m:VBox>
                                             <m:Text
-                                                text="🔹 Situação:"
+                                                text="🔹 {i18n>situation}:"
                                                 class="sapUiSmallMarginTop" />
                                             <m:Text
                                                 text="{user>situation}"
                                                 wrapping="true" />
                                             <m:Text
-                                                text="📌 Tarefa:"
+                                                text="📌 {i18n>task}:"
                                                 class="sapUiSmallMarginTop" />
                                             <m:Text
                                                 text="{user>task}"
                                                 wrapping="true" />
                                             <m:Text
-                                                text="⚙️ Ação:"
+                                                text="⚙️ {i18n>action}:"
                                                 class="sapUiSmallMarginTop" />
                                             <m:Text
                                                 text="{user>action}"
                                                 wrapping="true" />
                                             <m:Text
-                                                text="✅ Resultado:"
+                                                text="✅ {i18n>result}:"
                                                 class="sapUiSmallMarginTop" />
                                             <m:Text
                                                 text="{user>result}"
