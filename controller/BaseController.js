@@ -18,6 +18,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
           .split("-")[0]
           .toUpperCase();
       },
+      setLanguage: function (sLanguage) {
+        sap.ui.getCore().getConfiguration().setLanguage(sLanguage);
+      },
     }
   );
 });

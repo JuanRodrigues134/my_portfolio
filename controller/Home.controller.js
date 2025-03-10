@@ -77,9 +77,11 @@ sap.ui.define(
         onPressSelectLanguage: function () {
           const sSelectedLanguage =
             this.byId("idSlctLanguage").getSelectedKey();
-          sap.ui.getCore().getConfiguration().setLanguage(sSelectedLanguage);
-          models.loadUserModel();
-          this.getModel("user").refresh();
+          const oUserModel = this.getModel("user");
+          const sJsonPath = "model/user/user_" + sSelectedLanguage + ".json";
+          this.setLanguage(sSelectedLanguage);
+          oUserModel.loadData(sJsonPath);
+          oUserModel.refresh();
           this._oLanguageList.close();
         },
         onPressCloseLanguage: function () {

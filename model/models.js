@@ -19,8 +19,11 @@ sap.ui.define(
       },
 
       loadUserModel: function () {
-        const sLanguage = Core.getConfiguration().getLanguage().split("-")[0];
-        const sJsonPath = "model/user_" + sLanguage + ".json";
+        const sLanguage = Core.getConfiguration()
+          .getLanguage()
+          .split("-")[0]
+          ?.toLowerCase();
+        const sJsonPath = "model/user/user_" + sLanguage + ".json";
         const oUserModel = new JSONModel();
         oUserModel.loadData(sJsonPath).catch(function () {
           oUserModel.loadData("model/user/user.json");
