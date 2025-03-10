@@ -21,12 +21,12 @@
                         tooltip="{i18n>tooltipLanguage}"
                         press="onPressChangeLanguage" /> -->
                     <m:Button
-                        icon="sap-icon://dark-mode"
+                        icon="sap-icon://light-mode"
                         visible="{viewModel>/isDarkMode}"
                         press="onPressChangeTheme('sap_horizon')"
                         tooltip="{i18n>lightMode}" />
                     <m:Button
-                        icon="sap-icon://light-mode"
+                        icon="sap-icon://dark-mode"
                         visible="{= !${viewModel>/isDarkMode}}"
                         press="onPressChangeTheme('sap_horizon_dark')"
                         tooltip="{i18n>darkMode}" />

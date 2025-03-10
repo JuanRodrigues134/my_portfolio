@@ -1,33 +1,20 @@
 sap.ui.define(
   [
     "com/rrsolutions/myportfolio/controller/BaseController",
-    "sap/m/GroupHeaderListItem",
-    "sap/uxap/BlockBase",
-    "sap/m/Text",
-    "sap/ui/core/CustomData",
     "sap/ui/core/Fragment",
     "sap/m/library",
     "com/rrsolutions/myportfolio/model/models",
     "sap/ui/model/json/JSONModel",
+    "com/rrsolutions/myportfolio/modules/storage/Storage",
   ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (
-    BaseController,
-    GroupHeaderListItem,
-    BlockBase,
-    Text,
-    CustomData,
-    Fragment,
-    library,
-    models,
-    JSONModel
-  ) {
+  function (BaseController, Fragment, library, models, JSONModel, Storage) {
     "use strict";
 
     const URLHelper = library.URLHelper;
-
+    const oStorage = new Storage();
     return BaseController.extend(
       "com.rrsolutions.myportfolio.controller.Home",
       {
@@ -40,7 +27,9 @@ sap.ui.define(
         /**
          * @override
          */
-        onAfterRendering() {},
+        onAfterRendering() {
+          this._setTheme(oStorage.getVariant("theme"));
+        },
         onCvLinkPress: async function () {
           const oView = this.getView();
           const oLink = this.byId("idCvLink");
@@ -90,10 +79,13 @@ sap.ui.define(
           this.getModel("user").refresh();
         },
         onPressChangeTheme: function (sTheme) {
+          this._setTheme(sTheme);
+        },
+        _setTheme: function (sTheme) {
           const oViewModel = this.getModel("viewModel");
-          const isDarkMode = oViewModel.getProperty("/isDarkMode");
-          oViewModel.setProperty("/isDarkMode", !isDarkMode);
+          oViewModel.setProperty("/isDarkMode", sTheme.includes("dark"));
           sap.ui.getCore().getConfiguration().setTheme(sTheme);
+          oStorage.setVariant("theme", sTheme);
         },
         onPressOpenLinks: async function () {
           const oView = this.getView();
