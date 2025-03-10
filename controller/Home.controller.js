@@ -35,12 +35,10 @@ sap.ui.define(
         });
         this.getView().setModel(oViewModel, "viewModel");
       },
-
       /**
        * @override
        */
       onAfterRendering() {},
-
       onCvLinkPress: async function () {
         const oView = this.getView();
         const oLink = this.byId("idCvLink");
@@ -52,7 +50,6 @@ sap.ui.define(
         oView.addContent(this._oFragment);
         this._oFragment.openBy(oLink);
       },
-
       onDownloadCv: function (sLanguage) {
         const sFileName = `JUAN RABELO ${sLanguage}.pdf`;
         const sFilePath = jQuery.sap.getModulePath(
@@ -67,13 +64,11 @@ sap.ui.define(
         oLink.click();
         document.body.removeChild(oLink);
       },
-
       onMyAppGenericTilePress: function (oEvent) {
         const oSource = oEvent.getSource();
         const { id, name, url } = oSource.getBindingContext("user").getObject();
         URLHelper.redirect(url, true);
       },
-
       onPressChangeLanguage: async function () {
         const oView = this.getView();
         this._oLanguageList ??= await Fragment.load({
@@ -84,7 +79,6 @@ sap.ui.define(
         oView.addContent(this._oLanguageList);
         this._oLanguageList.open();
       },
-
       onPressSelectLanguage: function () {
         const sSelectedLanguage = this.byId("idSlctLanguage");
         sap.ui.getCore().setLanguage(sSelectedLanguage);

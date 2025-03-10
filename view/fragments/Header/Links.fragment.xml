@@ -4,6 +4,7 @@
     <HBox wrap="Wrap">
         <Toolbar design="Transparent">
             <Link
+                id="idCvLink"
                 text="{i18n>downloadCv}"
                 press="onCvLinkPress" />
             <ToolbarSeparator />
