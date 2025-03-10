@@ -39,7 +39,7 @@ This portfolio is designed to present my professional journey, technical experti
 ## 📬 Contact
 If you'd like to connect or collaborate, feel free to reach out via:
 - **Email**: juan.rabelo05@gmail.com
-- **LinkedIn**: [Profile](<LinkedIn-URL>)
-- **GitHub**: [Profile](<GitHub-URL>)
+- **LinkedIn**: [[Profile](<LinkedIn-URL>)](https://www.linkedin.com/in/juan-rabelo-570461244/)
+- **GitHub**: [[Profile](<GitHub-URL>)](https://github.com/JuanRodrigues134)
 
 Let's build something amazing together! 🚀
