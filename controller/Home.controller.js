@@ -75,8 +75,9 @@ sap.ui.define(
           this._oLanguageList.open();
         },
         onPressSelectLanguage: function () {
-          const sSelectedLanguage =
-            this.byId("idSlctLanguage").getSelectedKey();
+          const sSelectedLanguage = this.byId("idSlctLanguage")
+            .getSelectedKey()
+            .toLowerCase();
           const oUserModel = this.getModel("user");
           const sJsonPath = "model/user/user_" + sSelectedLanguage + ".json";
           this.setLanguage(sSelectedLanguage);
